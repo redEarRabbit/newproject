@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        th,td{
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <!--<script>
+        window.onload = function(){
+            /*数据渲染到页面*/
+            /*准备数据*/
+            var personList = [
+                {name:'小龙龙',age:18},
+                {name:'小刚刚',age:19}
+            ];
+            /*把数据转化成html结构*/
+            var html = "";
+            for(var i = 0 ; i < personList.length ; i++){
+                html += '<tr><td>'+personList[i].name+'</td><td>'+personList[i].age+'</td></tr>'
+            }
+            /*渲染到页面当中*/
+            document.querySelector('tbody').innerHTML = html;
+        }
+    </script>-->
+    <!--是不会被解析成js 是单纯的字符串  认作了是一个模版  有一些固定的语法-->
+    <!--
+        1. 在 <%  %> 之间可以执行js代码；
+        2. 在使用=号的时候可以取值
+        <% $.each(model,function(k,v){ %>
+            <tr><td><%=v.name%></td><td><%=v.age%></td></tr>
+        <% }); %>
+        3.在使用-号取值的时候  是直接渲染成字符串
+    -->
+    <script type="text/template" id="template">
+        <% _.each(model,function(v,k){ %>
+            <tr><td><%-v.name%></td><td><%-v.age%></td></tr>
+        <% }); %>
+    </script>
+    <script src="../lib/jquery/jquery.js"></script>
+    <script src="../lib/underscore/underscore.js"></script>
+    <script>
+        /*利用  underscore template*/
+        /*准备数据*/
+        /* &yen; 实体 \/ 转义符*/
+        /*
+        * 跨站脚本攻击  xss表示Cross Site Scripting(跨站脚本攻击)
+        * sql数据库脚本  js网页脚本
+        * */
+        var personList = [
+            {name:'<script>alert(0);<\/script>',age:18},
+                
+            {name:'小刚刚',age:19}
+        ];
+        /*把数据转化成html结构*/
+        /*使用template*/
+        /*1.需要一个模版*/
+
+        /*2.拿到模版当中的字符串*/
+        var templateStr = document.querySelector('#template').innerHTML;
+        /*3.利用template方法转成一个 模版方法 */
+        /* $  jquery   _  undersocre*/
+        var templateFuc = _.template(templateStr);
+        console.log(templateFuc);
+        /*4.利用转化过后的 模版方法    转化html结构*/
+        var templateHtml = templateFuc({model:personList});
+        console.log(templateHtml);
+
+        var html = _.template($('#template').html())({model:personList});
+        console.log(html);
+        /*渲染到页面当中*/
+        $('tbody').html(templateHtml);
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 1200px;
+            height: 1000px;
+            margin: 0 auto;
+            background: green;
+        }
+
+        /*
+        1.在超小屏设备  宽度是100%   背景  红色  768px下
+        2.在小屏设备    宽度是750px  背景  黄色  768px-992px
+        3.在中屏设备    宽度是970px  背景  蓝色  992px-1200px
+        4.在大屏设备    宽度是1170px  背景  粉色 1200px上
+        */
+        /*怎么去做？媒体查询*/
+       /* @media screen and (max-width: 768px) {
+            .container{
+                width: 100%;
+                background: red;
+            }
+            .row{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 992px) and (min-width: 768px) {
+            .container{
+                width: 750px;
+                background: yellow;
+            }
+        }
+        @media screen and (max-width: 1200px) and (min-width: 992px) {
+            .container{
+                width: 970px;
+                background: blue;
+            }
+        }
+
+        @media screen and (min-width: 1200px){
+            .container{
+                width: 1170px;
+                background: pink;
+            }
+        }*/
+
+        /*默认的查询的是屏幕*/
+        .container{
+            width: 1170px;
+            background: pink;
+        }
+        @media (max-width: 1200px) {
+            .container{
+                width: 970px;
+                background: blue;
+            }
+        }
+        @media (max-width: 992px) {
+            .container{
+                width: 750px;
+                background: yellow;
+            }
+        }
+        @media (max-width: 768px) {
+            .container{
+                width: 100%;
+                background: red;
+            }
+            .row{
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            A
+        </div>
+    </div>
+</body>
+</html>

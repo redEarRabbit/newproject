@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            /*字体默认的大小是16px*/
+
+        }
+        body{
+            font-size: 20px;
+        }
+        html{
+            font-size: 50px;
+        }
+        .em{
+            /*em  计算的基数是16px*/
+            font-size: 2em;
+        }
+        .rem{
+            /*rem  计算的基数是16px*/
+            /* r root  根元素  html */
+            /* 计算的基数 是html的font-size的大小 */
+            font-size: 2rem;
+        }
+        .rem:nth-child(2){
+            font-size: 1rem;
+        }
+        .rem:nth-child(3){
+            font-size: 1.2rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="em">AAA</div>
+    <div class="rem">A</div>
+    <div class="rem">A</div>
+    <div class="rem">A</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@charset "utf-8";
+/*字符编码一定要加上*/
+/*这样的注释是会 编译在css文件当中*/
+/*======变量======*/
+/*var a = 10;*/
+a:hover {
+  color: #ccc;
+  border: 1px solid #ccc;
+}
+/*========嵌入 混入  mixin=====*/
+.colorRed {
+  color: red;
+}
+.redBorder {
+  border: 1px solid red;
+}
+/*class嵌入*/
+.red_color_border {
+  color: red;
+  border: 1px solid red;
+}
+/*定义方法 定义传参 和变量一样  但是有默认的值一定要设置 */
+/*嵌入方法 */
+.box {
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -o-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+  border: 1px solid red;
+  color: red;
+}
+/*======嵌套=======*/
+/*.wjs_topBar{
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+}
+.wjs_topBar > .container{}
+.wjs_topBar > .container > .row{}
+.wjs_topBar > .container > .row > div{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}*/
+.wjs_topBar {
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+}
+.wjs_topBar > .container {
+  color: red;
+}
+.wjs_topBar > .container > .row {
+  color: red;
+}
+.wjs_topBar > .container > .row > div {
+  color: red;
+}
+.wjs_topBar .wjs_app {
+  color: red;
+}
+.wjs_topBar .wjs_app:hover {
+  /*伪类和为元素  需要 & 衔接*/
+  color: #fff;
+}
+/*========导入======*/
+/*这个文件全部用来定义变量*/
+/*这个文件全部定义的是方法*/
+a {
+  color: red;
+}
+/*========函数（内置函数）(简单运算)=====*/
+a {
+  color: #4d4d4d;
+}

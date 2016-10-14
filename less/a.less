@@ -1,0 +1,96 @@
+@charset "utf-8";/*字符编码一定要加上*/
+/*这样的注释是会 编译在css文件当中*/
+//这样的注释是不会编译
+
+
+/*======变量======*/
+/*var a = 10;*/
+@mainColor:#ccc;
+
+a:hover{
+  color: @mainColor;
+  border: 1px solid @mainColor;
+}
+
+
+/*========嵌入 混入  mixin=====*/
+.colorRed{
+  color: red;
+}
+.redBorder{
+  border: 1px solid red;
+}
+/*class嵌入*/
+.red_color_border{
+  .colorRed();
+  .redBorder();
+}
+/*定义方法 定义传参 和变量一样  但是有默认的值一定要设置 */
+.borderRadius(@size:20px){
+  -webkit-border-radius: @size;
+  -moz-border-radius:@size;
+  -o-border-radius: @size;
+  -ms-border-radius: @size;
+  border-radius: @size;
+}
+.colorRed(){
+  color: red;
+}
+.redBorder(){
+  border: 1px solid red;
+}
+/*嵌入方法 */
+.box{
+  .borderRadius(100px);
+  .redBorder();
+  .colorRed();
+}
+
+
+/*======嵌套=======*/
+/*.wjs_topBar{
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+}
+.wjs_topBar > .container{}
+.wjs_topBar > .container > .row{}
+.wjs_topBar > .container > .row > div{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}*/
+.wjs_topBar{
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  > .container{
+    color: red;
+    > .row{
+      color: red;
+      > div{
+        color: red;
+      }
+    }
+  }
+  .wjs_app{
+    color: red;
+    &:hover{
+      /*伪类和为元素  需要 & 衔接*/
+      color: #fff;
+    }
+  }
+}
+
+
+/*========导入======*/
+@import "var";
+@import "fuc";
+a{
+  .red();
+}
+
+
+/*========函数（内置函数）(简单运算)=====*/
+a{
+  color: darken(#666,10%);
+}
+

@@ -1,0 +1,79 @@
+<!--html5标准文档模式-->
+<!DOCTYPE html>
+<!--试用的语言是中文简体-->
+<html lang="zh-CN">
+<head>
+    <!--编码格式-->
+    <meta charset="utf-8">
+    <!--是告诉浏览器用最新的渲染引擎来渲染页面-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--用标准的移动端viewport设置来渲染页面  设置宽度和设备一样宽 默认的缩放比是和pc一样 1.0 不允许用户缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- 首先告诉浏览器   优先解析-->
+    <title>标题</title>
+    <!--需要引用bootstrap的核心css文件-->
+    <!-- Bootstrap -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--小于IE9的浏览器会加载这么两句js-->
+
+    <!--条件注释  小于IE9才会运行标签里面的代码   gt  gte  lte  条件判断    -->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+    <!--TODO自己的css文件-->
+</head>
+<body>
+<!--是一个导航条  带默认样式的导航条-->
+<nav class="navbar navbar-default">
+    <!--容器-->
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!--在移动端的显示效果最好-->
+        <div class="navbar-header">
+            <!--汉堡菜单  只会在移动端显示-->
+            <!--data-toggle="collapse" 申明当前的这个元素是一个折叠组件 -->
+            <!--data-target="#bs-example-navbar-collapse-1"  指明控制的那个元素目标元素-->
+            <!---->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <!--screen read only-->
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--logo区域-->
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <!---->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!--默认位置的导航内容-->
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <!--浮动在右侧的导航内容-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--因为是基于jquery的-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.js"></script>
+<!--引入bootstrap核心js文件-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<!--TODO 自己的js文件-->
+</body>
+</html>

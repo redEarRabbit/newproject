@@ -1,0 +1,117 @@
+<!--html5标准文档模式-->
+<!DOCTYPE html>
+<!--试用的语言是中文简体-->
+<html lang="zh-CN">
+<head>
+    <!--编码格式-->
+    <meta charset="utf-8">
+    <!--是告诉浏览器用最新的渲染引擎来渲染页面-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--用标准的移动端viewport设置来渲染页面  设置宽度和设备一样宽 默认的缩放比是和pc一样 1.0 不允许用户缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- 首先告诉浏览器   优先解析-->
+    <title>标题</title>
+    <!--需要引用bootstrap的核心css文件-->
+    <!-- Bootstrap -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--小于IE9的浏览器会加载这么两句js-->
+
+    <!--条件注释  小于IE9才会运行标签里面的代码   gt  gte  lte  条件判断    -->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+    <!--TODO自己的css文件-->
+</head>
+<body>
+<!--data-ride="carousel" 申明是一个轮播图组件-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!--点盒子-->
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <!--data-target="#carousel-example-generic" 当前的点控制的是那一个轮播图-->
+        <!--data-slide-to="0"  通过索引来控制轮播图的图片-->
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+
+    <style>
+        .m_img{
+            width: 100%;
+            display: block;
+        }
+        .m_img img{
+            width: 100%;
+            display: block;
+        }
+        .pc_img{
+            height: 410px;
+            width: 100%;
+            display: block;
+            /*背景*/
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+    <!--轮播的内容-->
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <!--非移动端-->
+            <a class="pc_img hidden-xs" style="background-image: url(../images/slide_01_2000x410.jpg);" href="#"></a>
+            <!--移动端-->
+            <a class="m_img hidden-sm hidden-md hidden-lg" href="#">
+                <img src="../images/slide_01_640x340.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="item">
+            <a class="pc_img hidden-xs" style="background-image: url(../images/slide_02_2000x410.jpg);" href="#"></a>
+            <a class="m_img  hidden-sm hidden-md hidden-lg" href="#">
+                <img src="../images/slide_02_640x340.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="item">
+            <a class="pc_img hidden-xs" style="background-image: url(../images/slide_03_2000x410.jpg);" href="#"></a>
+            <a class="m_img  hidden-sm hidden-md hidden-lg" href="#">
+                <img src="../images/slide_03_640x340.jpg" alt=""/>
+            </a>
+        </div>
+        <div class="item">
+            <a class="pc_img hidden-xs" style="background-image: url(../images/slide_04_2000x410.jpg);" href="#"></a>
+            <a class="m_img  hidden-sm hidden-md hidden-lg" href="#">
+                <img src="../images/slide_04_640x340.jpg" alt=""/>
+            </a>
+        </div>
+    </div>
+
+    <!--上一张和下一张-->
+    <!-- Controls -->
+    <!--data-slide="prev" 上一张-->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <!--data-slide="next" 下一张-->
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<!--因为是基于jquery的-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.js"></script>
+<!--引入bootstrap核心js文件-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<!--TODO 自己的js文件-->
+</body>
+</html>
